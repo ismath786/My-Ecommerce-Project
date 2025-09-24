@@ -69,7 +69,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'ecommerce.wsgi.application'
-
+LOGIN_URL="shop:userlogin"
 
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
