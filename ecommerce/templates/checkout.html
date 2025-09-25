@@ -95,12 +95,13 @@
                                         <label class="custom-control-label" for="shippingOption3">Next Business day</label> <span class="float-right font-weight-bold">$20.00</span> </div>
                                 </div>
                             </div>
-                        </div>{% for i in cart %}
+                        </div>
                         <div class="col-md-12 col-lg-12">
                             <div class="odr-box">
                                 <div class="title-left">
                                     <h3>Shopping cart</h3>
                                 </div>
+                                {% for i in cart %}
 
                                 <div class="rounded p-2 bg-light">
                                     <div class="media mb-2 border-bottom">
@@ -110,8 +111,9 @@
                                     </div>
 
                                 </div>
+                                {% endfor %}
                             </div>
-                        </div>{% endfor %}
+                        </div>
                         <div class="col-md-12 col-lg-12">
                             <div class="order-box">
                                 <div class="title-left">
@@ -146,7 +148,7 @@
         </div>
     </div>
     <!-- End Cart -->
-
+{% endblock %}
 
 
 
