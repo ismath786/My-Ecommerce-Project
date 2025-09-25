@@ -117,7 +117,11 @@ class Check_Out(View):
             return render(request, 'payment.html')
     def get(self,request):
         form_instance = OrderForm()
-        context={'form':form_instance}
+        c=Cart.objects.filter(user=request.user)
+        total = 0
+        for i in c:
+            total += i.quantity * i.product.price
+        context={'form':form_instance,'cart':c,'total':total}
         return render(request,'checkout.html',context)
 from cart.models import Order
 from django.contrib.auth.models import User
