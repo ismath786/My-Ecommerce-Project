@@ -63,8 +63,8 @@ class Userlogout(View):
 from shop.forms import CategoryForm, ProductForm, StockForm
 from django.contrib.auth.mixins import LoginRequiredMixin,UserPassesTestMixin
 class AddCategeory(LoginRequiredMixin,UserPassesTestMixin,View):
-        def test_func(self):
-            return self.request.user.is_superuser
+    def test_func(self):
+        return self.request.user.is_superuser
     
     def get(self,request):
         form_instance =  CategoryForm()
@@ -76,8 +76,8 @@ class AddCategeory(LoginRequiredMixin,UserPassesTestMixin,View):
             form_instance.save()
             return redirect('shop:categories')
 class AddProduct(LoginRequiredMixin,UserPassesTestMixin,View):
-        def test_func(self):
-            return self.request.user.is_superuser
+    def test_func(self):
+        return self.request.user.is_superuser
     def get(self,request):
         form_instance = ProductForm()
         context = {'form': form_instance}
@@ -88,8 +88,8 @@ class AddProduct(LoginRequiredMixin,UserPassesTestMixin,View):
             form_instance.save()
             return redirect('shop:categories')
 class AddStock(LoginRequiredMixin,UserPassesTestMixin,View):
-        def test_func(self):
-            return self.request.user.is_superuser
+    def test_func(self):
+        return self.request.user.is_superuser
     def get(self,request,i):
         p=Product.objects.get(id=i)
         form_instance = StockForm(instance=p)
